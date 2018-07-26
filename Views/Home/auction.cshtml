@@ -1,0 +1,22 @@
+@model LoginReg.Models.Auction
+<h2>New Auction</h2>
+<form asp-action="newAuction" method="POST">
+
+<label>Product Name:</label>
+<input asp-for="ProductName" type="text"><br><br>
+<span asp-validation-for="ProductName"></span>
+
+<label>Starting Bid:</label>
+<input asp-for="Bid" type="text"><br><br>
+<span asp-validation-for="Bid"></span>
+
+<label>Description:</label>
+<input asp-for="Description" type="text"><br><br>
+<span asp-validation-for="Description"></span>
+
+<label>Product Name:</label>
+<input asp-for="EndDate" type="date"><br><br>
+<span asp-validation-for="EndDate"></span>
+
+<input type="submit" value="Create Auction">
+</form>

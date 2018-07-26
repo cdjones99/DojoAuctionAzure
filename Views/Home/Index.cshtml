@@ -1,0 +1,47 @@
+﻿@model LoginReg.Models.User
+
+<h1>Welcome to DojoAuctioneer!</h1>
+
+
+<h2>Sign up</h2>
+<div>
+<form asp-action="newUser" method="POST">
+
+<label>First Name:</label>
+<input asp-for="FirstName" type="text"><br>
+<span asp-validation-for="FirstName"></span>
+
+<label>Last Name:</label>
+<input asp-for="LastName" type="text"><br>
+<span asp-validation-for="LastName"></span>
+
+<label>Email:</label>
+<input asp-for="Email" type="text"><br>
+<span asp-validation-for="Email"></span>
+
+<label>Password:</label>
+<input type="password" asp-for="Password"><br>
+<span asp asp-validation-for="Password"></span>
+
+<label>Password Confirmation:</label>
+<input type="password" asp-for="confirm_password"><br>
+<span asp asp-validation-for="confirm_password"></span>
+<input type="submit" value="Create User" class="btn btn-success">
+</form>
+</div>
+
+<div>
+<form asp-action="login" method="POST">
+
+<h2>Login</h2>
+
+<label>Email:</label>
+<input asp-for="Email" type="text"><br>
+<span asp-validation-for="Email"></span>
+
+<label>Password:</label>
+<input type="password" asp-for="Password"><br>
+<span asp asp-validation-for="Password"></span>
+<input type="submit" value="Log In" class="btn btn-success">
+</form>
+</div>

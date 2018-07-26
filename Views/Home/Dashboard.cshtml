@@ -1,0 +1,42 @@
+@using LoginReg.Models
+
+<h3>Welcome, @ViewBag.currentUser.FirstName</h3>
+<a href="/logout">Logout</a><br><br>
+
+
+<a href="/auction">New Auction</a>
+
+<div class="container">
+  <h2>Current Auctions</h2>        
+<div class="container">  
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Seller</th>
+        <th>Top Bid</th>
+        <th>Time Remaining</th>
+        <th></th>
+      </tr>
+    </thead>
+    @{
+  @foreach (var auction in @ViewBag.allAuctions) {
+    @foreach (var user in @ViewBag.allUsers) {
+      @if (auction.userid == user.userid) {
+    <tbody>
+      <tr>
+        <td><a href="Home/auctionDetails/@auction.auctionid">@auction.ProductName</a></td>
+        <td>@user.FirstName</td>
+        <td>$@auction.Bid</td>
+        <td>@auction.EndDate</td>
+      @if (auction.userid == ViewBag.currentUser.userid){
+        <td><a href="Home/Delete/@auction.auctionid">Delete</a></td>
+      }
+      </tr>
+    </tbody>
+  }
+}
+}
+}
+  </table>
+</div>
